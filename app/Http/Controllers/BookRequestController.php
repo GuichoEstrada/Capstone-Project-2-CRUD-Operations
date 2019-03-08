@@ -59,7 +59,6 @@ class BookRequestController extends Controller
       $book->save();
 
       Session::flash('approve', 'Book request has been approved.');
-      return redirect()->back();
     }
 
     public function decline($id, $bid){
@@ -67,7 +66,6 @@ class BookRequestController extends Controller
       $user->books()->detach($bid);
 
       Session::flash('declined', 'Book request has been denied.');
-      return redirect()->back();
     }
 
     public function returnbooks(){
@@ -87,7 +85,6 @@ class BookRequestController extends Controller
       $book->save();
 
       Session::flash('returned', 'Book/s returned.');
-      return redirect()->back();
     }
     //END OF APPROVE/DECLINE/RETURN BOOK REQUESTS
 }
