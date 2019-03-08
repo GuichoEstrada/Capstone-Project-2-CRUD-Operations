@@ -8,7 +8,7 @@
 		ISBN: <input class="form-control" type="number" name="isbn" value="{{$books->isbn}}"><br>
 		Name: <input class="form-control" type="text" name="name" value="{{$books->name}}"><br>
 		Description: <input class="form-control" type="text" name="description" value="{{$books->description}}"><br>
-		Stock: <input class="form-control" type="number" min="1" name="stock" value="{{$books->stock}}"><br>
+		Stock: <input class="form-control" type="number" min="0" name="stock" value="{{$books->stock}}"><br>
 		Category: 
 		<select class="form-control" name="category_id">
 			@foreach($categories as $category)

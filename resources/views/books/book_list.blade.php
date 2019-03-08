@@ -19,9 +19,9 @@
 		{{Session::get('deleteBook')}}
 	</div>
 @endif
-@if (Session::has('welcome'))
+@if (Session::has('borrow'))
 	<div class="alert alert-success">
-		{{Session::get('welcome')}}
+		{{Session::get('borrow')}}
 	</div>
 @endif
 

@@ -3,9 +3,9 @@
 @section('title', 'Admin Page')
 
 @section('content')
-@if (Session::has('approved'))
+@if (Session::has('approve'))
 	<div class="alert alert-success">
-		{{Session::get('returned')}}
+		{{Session::get('approve')}}
 	</div>
 @endif
 @if (Session::has('declined'))

@@ -45,7 +45,7 @@ class BookRequestController extends Controller
       } else
         $user->books()->attach($id, ['quantity' => $qty]);
 
-      // Session::flash('welcome', 'Welcome, $user->name.');
+      Session::flash('borrow', 'Borrow request sent. Please wait for approval.');
       return redirect()->back();
     }
 

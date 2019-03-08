@@ -9,7 +9,6 @@
 		<thead class="text-center thead-light">
 			<tr>
 				<td class="align-middle"><strong><i class="fas fa-hashtag"></i> Request Number</strong></td>
-				<td class="align-middle"><strong><i class="fas fa-user-tie"></i> Borrower</strong></td>
 				<td class="align-middle"><strong><i class="fas fa-book"></i> Book</strong></td>
 				<td><strong><i class="fab fa-creative-commons-zero"></i> Quantity</strong></td>
 				<td></td>
@@ -20,10 +19,9 @@
 		</thead>
 		<tbody>
 			@foreach($user->books as $book)
-			@if($book->pivot->status == 1)
+			@if($book->pivot->status == 0)
 				<tr style="border: 5px solid black;">
 					<td class="align-middle">{{$book->pivot->id}}</td>
-					<td class="align-middle">{{$user->name}}</td>
 					<td class="align-middle">
 						<div>
 							<div class="mb-2"><em >{{$book->name}}</em></div>
@@ -58,10 +56,9 @@
 		</thead>
 		<tbody>
 			@foreach($user->books as $book)
-			@if($book->pivot->status == 0)
+			@if($book->pivot->status == 1)
 				<tr style="border: 5px solid black;">
 					<td class="align-middle">{{$book->pivot->id}}</td>
-					<td class="align-middle">{{$user->name}}</td>
 					<td class="align-middle">
 						<div>
 							<div class="mb-2"><em >{{$book->name}}</em></div>
@@ -69,6 +66,7 @@
 						</div>
 					</td>
 					<td class="align-middle">{{$book->pivot->quantity}}</td>
+					<td></td>
 					<td></td>
 					<td></td>
 					<td></td>
