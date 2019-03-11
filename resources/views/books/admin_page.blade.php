@@ -46,7 +46,11 @@
 							<td class="align-middle">{{$user->pivot->quantity}}</td>
 							<td></td>
 							<td class="align-middle" data-id="{{$user->pivot->user_id}}" data-bid="{{$request->id}}" data-qty="{{$user->pivot->quantity}}" data-name="{{$request->name}}">
+								@if($request->stock < $user->pivot->quantity)
+									<button class="btn btn-warning mb-2"><i class="fas fa-minus-circle"></i> Out Of Stock</button><br>
+								@else
 								<button class="btn btn-success accept mb-2"><i class="fas fa-thumbs-up"></i> Accept</button><br>
+								@endif
 								<button class="btn btn-danger decline"><i class="fas fa-thumbs-down"></i> Decline</button>
 							</td>
 							<td></td>
@@ -80,6 +84,7 @@
 				}).then( function(data){
 					console.log('Approved');
 					document.querySelector('#row'+id+bid).remove();
+					location.reload();
 				})
 			})
 		})

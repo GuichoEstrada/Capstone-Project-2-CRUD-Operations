@@ -48,7 +48,7 @@
 				<td class="align-middle"><strong><i class="fas fa-hashtag"></i> Request Number</strong></td>
 				<td class="align-middle"><strong><i class="fas fa-book"></i> Book</strong></td>
 				<td class="align-middle"><strong><i class="far fa-clock"></i> Date</strong></td>
-				<td><strong><i class="fab fa-creative-commons-zero"></i> Quantity</strong></td>
+				<td class="align-middle"><strong><i class="fab fa-creative-commons-zero"></i> Quantity</strong></td>
 				<td></td>
 				<td></td>
 				<td></td>

@@ -42,6 +42,34 @@
     	<h3 align="center"><i class="fas fa-book"></i> Books</h3>
     </div>
 </div>
+
+{{-- @foreach($books as $book)
+
+<div class="card text-center bookList" style="width: 22rem; display: inline-flex;">
+  <img src="{{$book->image}}" height="400" style="border: 5px solid black;">
+  	<div class="card-body" data-id="{{$book->id}}" data-name="{{$book->name}}" style="border: 5px solid black;">
+	    <h5 class="card-title"><strong>{{$book->name}}</strong></h5>
+	    <p class="card-text">Stock: {{$book->stock}}</p>
+	    <button class="btn btn-primary detailBtn" data-toggle="modal" data-target="#detailsModal" style="box-shadow: 5px 3px #000000;"><i class="far fa-eye"></i> Show Details</button>
+	  
+	 	@if(Auth::user() && Auth::user()->role_id == 2)
+		@if($book->stock == 0)
+		<button class="btn btn-secondary" style="box-shadow: 5px 3px #000000;"><i class="fas fa-minus-circle"></i> Out of Stock</button>
+		@else
+		<button class="btn btn-secondary borrowBtn" data-toggle="modal" data-target="#borrowModal" style="box-shadow: 5px 3px #000000;"><i class="fas fa-retweet"></i> Borrow Book</button>
+		@endif
+		@endif
+		@if(Auth::user() && Auth::user()->role_id == 1)
+		<button class="btn btn-warning editBtn ml-2" data-toggle="modal" data-target="#editModal" style="box-shadow: 5px 3px #000000;"><i class="fas fa-edit"></i> Edit</button>
+		@endif
+		@if(Auth::user() && Auth::user()->role_id == 1)
+		<button class="btn btn-danger delBtn mt-2" data-toggle="modal" data-target="#deleteModal" style="box-shadow: 5px 3px #000000;"><i class="fas fa-trash-alt"></i> Delete</button>
+		@endif
+	</div>
+</div>
+
+@endforeach --}}
+
 <table class="table table-striped text-center mb-5" id="bookList" style="font-size: 24px; font-weight: bold; ">
 	<thead>
 		<tr>
@@ -175,12 +203,13 @@
 <script type="text/javascript">
 	const csrfToken =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
+	// let bookLists = document.querySelector('.bookList');
+	// bookLists.forEach( function(bookList) {
 	bookList.addEventListener('click', function(e){
 		if (e.target.classList.contains('detailBtn')) {
 			let id = e.target.parentElement.getAttribute('data-id');
 			let name = e.target.parentElement.getAttribute('data-name');
 			showBookTitle.innerHTML = "<strong>" + name + "</strong>";
-
 			fetch('/books/'+id)
 			.then( function(res) {
 				return res.text();
