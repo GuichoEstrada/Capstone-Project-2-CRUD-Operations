@@ -22,8 +22,8 @@
 					<td class="align-middle"><strong><i class="fas fa-hashtag"></i> Request Number</strong></td>
 					<td class="align-middle"><strong><i class="fas fa-user-tie"></i> Borrower</strong></td>
 					<td class="align-middle"><strong><i class="fas fa-book"></i> Book</strong></td>
+					<td class="align-middle"><strong><i class="far fa-clock"></i> Date</strong></td>
 					<td><strong><i class="fab fa-creative-commons-zero"></i> Quantity</strong></td>
-					<td></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -42,8 +42,8 @@
 									<div><img src="{{$request->image}}" width="100" height="100" style="border: 5px solid black;"></div>
 								</div>
 							</td>
+							<td class="align-middle">{{$user->pivot->created_at}}</td>
 							<td class="align-middle">{{$user->pivot->quantity}}</td>
-							<td></td>
 							<td></td>
 							<td class="align-middle" data-id="{{$user->pivot->user_id}}" data-bid="{{$request->id}}" data-qty="{{$user->pivot->quantity}}" data-name="{{$request->name}}">
 								<button class="btn btn-success accept mb-2"><i class="fas fa-thumbs-up"></i> Accept</button><br>

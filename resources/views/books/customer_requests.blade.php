@@ -10,8 +10,8 @@
 			<tr>
 				<td class="align-middle"><strong><i class="fas fa-hashtag"></i> Request Number</strong></td>
 				<td class="align-middle"><strong><i class="fas fa-book"></i> Book</strong></td>
+				<td class="align-middle"><strong><i class="far fa-clock"></i> Date</strong></td>
 				<td><strong><i class="fab fa-creative-commons-zero"></i> Quantity</strong></td>
-				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -28,8 +28,8 @@
 							<div><img src="{{$book->image}}" width="100" height="100" style="border: 5px solid black;"></div>
 						</div>
 					</td>
+					<td class="align-middle">{{$book->pivot->created_at}}</td>
 					<td class="align-middle">{{$book->pivot->quantity}}</td>
-					<td></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -47,8 +47,8 @@
 			<tr>
 				<td class="align-middle"><strong><i class="fas fa-hashtag"></i> Request Number</strong></td>
 				<td class="align-middle"><strong><i class="fas fa-book"></i> Book</strong></td>
+				<td class="align-middle"><strong><i class="far fa-clock"></i> Date</strong></td>
 				<td><strong><i class="fab fa-creative-commons-zero"></i> Quantity</strong></td>
-				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -65,8 +65,8 @@
 							<div><img src="{{$book->image}}" width="100" height="100" style="border: 5px solid black;"></div>
 						</div>
 					</td>
+					<td class="align-middle">{{$book->pivot->created_at}}</td>
 					<td class="align-middle">{{$book->pivot->quantity}}</td>
-					<td></td>
 					<td></td>
 					<td></td>
 					<td></td>

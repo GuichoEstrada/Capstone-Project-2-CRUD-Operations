@@ -26,6 +26,6 @@ class User extends Authenticatable
 
     function books() {
         return $this->belongsToMany('App\Book')
-        ->withPivot(['quantity', 'status', 'id']);
+        ->withPivot(['quantity', 'status', 'id', 'created_at']);
     }
 }

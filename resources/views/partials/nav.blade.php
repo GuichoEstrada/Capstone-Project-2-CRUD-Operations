@@ -44,7 +44,7 @@
       @endif
       <li class="nav-item">
         <form method="post" action="/logout">
-          <button>
+          <button class="btn btn-secondary ml-5">
           {{csrf_field()}}
           <i class="fas fa-sign-out-alt"></i> Logout</a>
           </button>
